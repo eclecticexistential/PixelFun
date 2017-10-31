@@ -48,11 +48,7 @@ function getColors(){
 
 function giveColor(){
   getColors()
-  for(i=0;i<colors.length-1;i++){
-  var newP=document.createElement('p');
-  newP.style.background=colors[i];
-  area.appendChild(newP);
-  }
+  colors.forEach(color => area.appendChild(document.createElement('p')).style.background=color);
 }
 
 giveColor();
