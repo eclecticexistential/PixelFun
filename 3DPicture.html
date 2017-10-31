@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+<title>3D Picture?</title>
+<style>
+
+*{
+margin:0;
+padding:0;
+}
+
+#area{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+p{
+padding:0.063em;
+}
+
+</style>
+</head>
+
+<body>
+<div id="area">
+
+</div>
+
+
+<script>
+
+var area= document.getElementById("area");
+var W=window.innerWidth;
+var H=window.innerHeight;
+var colors=[];
+
+
+function getPos(){
+  return Math.round(Math.random() *255);
+}
+
+function getColors(){
+  var total=W*H;
+  for(i=0;i<total;i++){
+  colors.push("rgb("+getPos()+","+getPos()+","+getPos()+")")
+  }
+}
+
+function giveColor(){
+  getColors()
+  for(i=0;i<colors.length-1;i++){
+  var newP=document.createElement('p');
+  newP.style.background=colors[i];
+  area.appendChild(newP);
+  }
+}
+
+giveColor();
+
+
+</script>
+</body>
